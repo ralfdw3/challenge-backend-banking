@@ -1,10 +1,14 @@
 package challenge.backend.banking.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
-@Document(collation = "Merchant")
+@Entity
+@Table(name = "Merchants")
 @Builder
 public class Merchant extends User{
     String cnpj;

@@ -1,11 +1,12 @@
 package challenge.backend.banking.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Builder;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "CommonUser")
+@Entity
+@Table(name = "CommonUsers")
 @Builder
-public class CommonUser extends User{
+public class CommonUser extends User {
     String cpf;
 }

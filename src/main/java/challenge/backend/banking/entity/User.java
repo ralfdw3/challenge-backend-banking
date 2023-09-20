@@ -1,13 +1,18 @@
 package challenge.backend.banking.entity;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
-@Builder
+import java.math.BigDecimal;
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
-    String id;
+    Long id;
     String name;
     String email;
     String password;
+    BigDecimal balance;
 }
