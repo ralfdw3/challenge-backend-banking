@@ -1,14 +1,16 @@
-package challenge.backend.banking.entity;
+package challenge.backend.banking.entities;
 
 import challenge.backend.banking.enums.UserType;
 import jakarta.persistence.*;
 import lombok.Builder;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 
 @Builder
 @Entity
 @Table(name = "Users")
+@Getter
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,14 +1,15 @@
-package challenge.backend.banking.entity;
+package challenge.backend.banking.entities;
 
-import challenge.backend.banking.entity.User;
 import jakarta.persistence.*;
 import lombok.Builder;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "Transactions")
 @Builder
+@Getter
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,5 +20,5 @@ public class Transaction {
     @ManyToOne
     @JoinColumn(name = "payer_id")
     User payer;
-    BigDecimal value;
+    BigDecimal amount;
 }
