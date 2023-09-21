@@ -1,8 +1,8 @@
 package challenge.backend.banking.controller;
 
 import challenge.backend.banking.controller.interfaces.TransactionControllerInterface;
-import challenge.backend.banking.entity.transaction.TransactionInput;
-import challenge.backend.banking.entity.transaction.TransactionOutput;
+import challenge.backend.banking.entity.input.TransactionInput;
+import challenge.backend.banking.entity.output.TransactionOutput;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,7 +1,7 @@
 package challenge.backend.banking.controller.interfaces;
 
-import challenge.backend.banking.entity.transaction.TransactionInput;
-import challenge.backend.banking.entity.transaction.TransactionOutput;
+import challenge.backend.banking.entity.input.TransactionInput;
+import challenge.backend.banking.entity.output.TransactionOutput;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
