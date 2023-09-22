@@ -8,6 +8,8 @@ import challenge.backend.banking.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import static challenge.backend.banking.services.PasswordEncoder.passwordCrypt;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -33,7 +35,7 @@ public class UserService {
         return User.builder()
                 .name(userInput.name())
                 .email(userInput.email())
-                .password(userInput.password())
+                .password(passwordCrypt(userInput.password()))
                 .document(userInput.document())
                 .balance(userInput.balance())
                 .userType(userInput.userType())
