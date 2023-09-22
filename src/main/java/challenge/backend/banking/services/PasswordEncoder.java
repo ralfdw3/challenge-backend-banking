@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class PasswordEncoder {
-    private static BCryptPasswordEncoder encoder;
-    public static String passwordCrypt(final String password){
+    private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    public static String passwordEncoder(final String password){
         return encoder.encode(password);
     }
 
