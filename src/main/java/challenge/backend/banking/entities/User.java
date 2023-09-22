@@ -9,7 +9,8 @@ import java.math.BigDecimal;
 
 @Builder
 @Entity
-@Table(name = "Users")
+@Table(name = "Users",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"email", "document"}))
 @Getter
 public class User {
     @Id

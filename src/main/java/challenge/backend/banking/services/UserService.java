@@ -1,6 +1,8 @@
 package challenge.backend.banking.services;
 
 import challenge.backend.banking.entities.User;
+import challenge.backend.banking.entities.inputs.UserInput;
+import challenge.backend.banking.entities.outputs.UserOutput;
 import challenge.backend.banking.exceptions.NotFoundException;
 import challenge.backend.banking.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,5 +15,28 @@ public class UserService {
 
     public User findUserById(Long id){
         return userRepository.findById(id).orElseThrow(() -> new NotFoundException("Id inválido: usuário não encontrado"));
+    }
+    public UserOutput createUser(UserInput userInput) {
+        User user = buildUser(userInput);
+        userRepository.save(user);
+        return buildUserOutput(user);
+    }
+
+    private static UserOutput buildUserOutput(User user) {
+        return UserOutput.builder()
+                .id(user.getId())
+                .name(user.getName())
+                .build();
+    }
+
+    private static User buildUser(UserInput userInput) {
+        return User.builder()
+                .name(userInput.name())
+                .email(userInput.email())
+                .password(userInput.password())
+                .document(userInput.document())
+                .balance(userInput.balance())
+                .userType(userInput.userType())
+                .build();
     }
 }
