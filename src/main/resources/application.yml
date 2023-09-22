@@ -9,7 +9,3 @@ spring:
   properties:
     hibernate:
       default_schema: picpaychallenge
-
-springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
