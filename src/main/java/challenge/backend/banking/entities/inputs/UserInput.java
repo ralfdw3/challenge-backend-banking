@@ -2,9 +2,11 @@ package challenge.backend.banking.entities.inputs;
 
 import challenge.backend.banking.enums.UserType;
 import jakarta.validation.constraints.NotBlank;
+import lombok.Builder;
 
 import java.math.BigDecimal;
 
+@Builder
 public record UserInput(
         @NotBlank
         String name,

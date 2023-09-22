@@ -3,6 +3,7 @@ package challenge.backend.banking.entities;
 import challenge.backend.banking.enums.UserType;
 import jakarta.persistence.*;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import java.math.BigDecimal;
@@ -12,6 +13,7 @@ import java.math.BigDecimal;
 @Table(name = "Users",
         uniqueConstraints = @UniqueConstraint(columnNames = {"email", "document"}))
 @Getter
+@EqualsAndHashCode
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
