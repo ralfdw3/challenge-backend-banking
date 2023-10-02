@@ -1,7 +1,6 @@
 package challenge.backend.banking.stubs;
 
 import challenge.backend.banking.entities.User;
-import challenge.backend.banking.entities.inputs.UserInput;
 import challenge.backend.banking.enums.UserType;
 
 import java.math.BigDecimal;
@@ -19,18 +18,7 @@ public interface UserStub {
     UserType USER_TYPE_COMMON = UserType.COMMON;
     UserType USER_TYPE_MERCHANT = UserType.MERCHANT;
 
-
-    static UserInput.UserInputBuilder commonUserInputDefault() {
-        return UserInput.builder()
-                .name(NAME)
-                .password(PASSWORD)
-                .email(EMAIL_PAYER)
-                .document(DOCUMENT_ALL_ZERO)
-                .balance(BALANCE_HUNDRED)
-                .userType(USER_TYPE_COMMON);
-    }
-
-    static User commonUser(){
+    static User commonUser() {
         return User.builder()
                 .name(NAME)
                 .password(PASSWORD)
@@ -41,7 +29,7 @@ public interface UserStub {
                 .build();
     }
 
-    static User commonUserWithNoMoney(){
+    static User commonUserWithNoMoney() {
         return User.builder()
                 .name(NAME)
                 .password(PASSWORD)
@@ -52,7 +40,7 @@ public interface UserStub {
                 .build();
     }
 
-    static User merchantUser(){
+    static User merchantUser() {
         return User.builder()
                 .name(NAME)
                 .password(PASSWORD)
